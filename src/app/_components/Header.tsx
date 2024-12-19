@@ -31,7 +31,7 @@ export default function Header() {
           <Link href={"/"} className={"text-primary text-2xl font-black"}>
             Code Attention
           </Link>
-          <NavLink href={"/news"}>보안 뉴스</NavLink>
+          <NavLink href={"/vulnews"}>보안 뉴스</NavLink>
         </div>
         <div className={"flex items-center justify-between gap-5"}>
           {isLogin && <NavLink href={"/library"}>라이브러리</NavLink>}

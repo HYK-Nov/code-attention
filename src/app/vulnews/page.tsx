@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { Button } from "@headlessui/react";
-import ArticleButton from "@/app/_components/news/ArticleButton";
+import ArticleButton from "@/app/_components/vulnews/ArticleButton";
+import PopularTag from "@/app/_components/vulnews/PopularTag";
+import { getArticles } from "@/server/article.action";
 
 export default function Page() {
   return (
@@ -21,10 +22,10 @@ export default function Page() {
               "flex justify-between border-0 border-b border-neutral-300"
             }
           >
-            <h1 className={"text-primary pb-5 text-xl font-bold"}>
+            <h1 className={"pb-5 text-xl font-bold text-primary"}>
               보안 취약점 기사
             </h1>
-            <div className={"text-secondary flex h-fit gap-5"}>
+            <div className={"flex h-fit gap-5 text-secondary"}>
               <Button className={"flex items-center gap-2"}>
                 <div
                   className={
@@ -48,24 +49,13 @@ export default function Page() {
               "flex flex-col divide-y pt-10 *:py-5 first:*:pt-0 last:*:pb-0"
             }
           >
-            <ArticleButton />
-            <ArticleButton />
-            <ArticleButton />
+            <ArticleButton newsId={1} />
+            <ArticleButton newsId={2} />
+            <ArticleButton newsId={3} />
           </div>
         </section>
         <aside className={"col-span-2 w-full pl-8"}>
-          <h1 className={"text-primary pb-5 text-lg font-bold"}>인기태그</h1>
-          <section
-            className={
-              "text-secondary flex flex-col divide-y rounded px-4 py-5 font-semibold outline outline-1 outline-neutral-300 *:py-2 hover:*:cursor-pointer hover:*:text-blue-600"
-            }
-          >
-            <p>1. 태그</p>
-            <p>1. 태그</p>
-            <p>1. 태그</p>
-            <p>1. 태그</p>
-            <p>1. 태그</p>
-          </section>
+          <PopularTag />
         </aside>
       </div>
     </main>
